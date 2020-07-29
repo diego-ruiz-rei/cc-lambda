@@ -237,7 +237,7 @@ spec:
         notifyGithubStatusCheck('PENDING', 'Continuous integration: Build & Deploy image!')
 
         container('serverless'){
-          sh 'svs deploy'
+          sh 'serverless deploy'
         //   container('docker'){
         //     script {
         //       docker.withRegistry('https://docker.'+baseUrl, 'nexus') {
@@ -383,7 +383,7 @@ spec:
       }
       steps {
         container('serverless') {
-          sh 'svs deploy --stage staging'
+          sh 'serverless deploy --stage staging'
         }
         // container('tools') {
         //   dir("$REPO_DEPLOY_NAME") {
@@ -406,7 +406,7 @@ spec:
       steps {
 
         container('serverless') {
-          sh 'svs deploy --stage prod'
+          sh 'serverless deploy --stage prod'
         }
         // container('docker'){
         //   script {
